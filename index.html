@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" href="https://use.typekit.net/vvz7zos.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vvz7zos.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vvz7zos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <script src="data.js"></script>
+    <style>
+      #p5 {
+          display: block;
+      }
+      
+      /* Styles for the dropdown bar */
+      .dropdown-bar {
+          background-color: black;
+          color: white;
+          width: 100%;
+          padding: 15px 0;
+          text-align: center;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 1.2em;
+          position: relative;
+          transition: all 0.3s ease;
+      }
+      
+      .dropdown-bar:hover {
+          background-color: #333;
+      }
+      
+      .dropdown-bar::after {
+          content: "▼";
+          margin-left: 10px;
+          font-size: 0.8em;
+          transition: transform 0.3s ease;
+      }
+      
+      .dropdown-bar.active::after {
+          transform: rotate(180deg);
+      }
+      
+      /* Hide the container by default */
+      .containerS {
+          display: none;
+          transition: all 0.5s ease;
+      }
+      
+      /* Show the container when active */
+      .containerS.show {
+          display: grid;
+      }
+  </style>
+    <title>SENIORS</title>
+</head>
+<body class="Seniorback">
+    <main>
+        <nav>
+            <div id="menuToggle">
+            </div>     
+        </nav>
+        <div class ="p5" id="p5">
+         
+            <script>
+              let sketchInstance;
+
+              function startSketch() {
+                  sketchInstance = new p5(); // Just call p5() without passing a function
+              }
+
+              function checkWindowSize() {
+                  let p5Div = document.getElementById('p5');
+
+                  if (window.innerWidth < 800) {
+                      if (sketchInstance) {
+                          sketchInstance.remove(); // Remove the p5.js instance
+                          sketchInstance = null;
+                      }
+                      p5Div.style.display = 'none'; // Hide the div
+                  } else {
+                      p5Div.style.display = 'block'; // Show the div
+                      if (!sketchInstance) {
+                          startSketch(); // Restart sketch
+                      }
+                  }
+              }
+
+              window.addEventListener('resize', checkWindowSize);
+              window.addEventListener('load', () => {
+                  startSketch();  // Initialize sketch on load
+                  checkWindowSize();
+              });
+            </script>
+      
+            <script src="sketch.js"></script>
+            <div class="p5c" style="display: flex; justify-content: center; width: 100%; overflow: auto">
+                <div id="p5-canvas-container" width="100%" style="overflow: hidden;"></div>
+            </div>
+        </div>
+
+        <!-- Added dropdown bar -->
+        <div class="dropdown-bar" id="seniors-dropdown">SENIORS SHOWCASE - CLICK TO VIEW</div>
+
+        <div class="containerS">
+            <div class="grid-cell-1" id="bcolor"><div class="A"><a href="https://larch1.myportfolio.com/work" target="_blank" title="portfolio"><img src="pic/LiamArch.png"></a></div><div class="B"><h2>LIAM ARCH</h2></div></div>
+            <div class="grid-cell-1" id="gcolor"><div class="A"><a href="https://www.linkedin.com/in/fiona-armstrong-6b1414210/ " target="_blank" title="portfolio"><img src="pic/Fiona Armstrong 2.png"></a></div><div class="B"><h2>FIONA ARMSTRONG</h2></div></div>
+            <div class="grid-cell-1" id="pcolor"><div class="A"><a href="https://clarabutchersdesign.myportfolio.com/work" target="_blank" title="portfolio"><img src="pic/Clara Butcher 1.png"></a></div><div class="B"><h2>CLARA BUTCHER</h2></div></div>
+            <div class="grid-cell-1" id="gcolor"><div class="A"><a href="https://gcarsten556d.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/GenevieveCarstensen.png"></a></div><div class="B"><h2>GENEVIEVE CARSTENSEN</h2></div></div>
+            <div class="grid-cell-1" id="pcolor"><div class="A"><a href="https://sproutdickerson.com" target="_blank" title="portfolio"><img src="pic/SproutDickerson.png"></a></div><div class="B"><h2>SPROUT DICKERSON</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://cecifoley.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/Ceci Foley 1.png"></a></div><div class="B"><h2>CECI FOLEY</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="https://sglenn10.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/SarahGlenn.png"></a></div><div class="B"><h2>SARAH GLENN</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="#" target="_blank" title="portfolio"><img src="pic/Abigail Holeman cutout.png"></a></div><div class="B"><h2>ABIGAIL HOLEMAN</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://stephanieijoma.myportfolio.com" target="_blank" title="portfolio"><img src="pic/Stephanie Ijoma 1.png"></a></div><div class="B"><h2>STEPHANIE IJOMA</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="www.winstondesignco.com" target="_blank" title="portfolio"><img src="pic/RyleyIrwin.png"></a></div><div class="B"><h2>RYLEY IRWIN</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://www.faithjesterdesigns.com/" target="_blank" title="portfolio"><img src="pic/FaithJester.png"></a></div><div class="B"><h2>FAITH JESTER</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://joyposting.myportfolio.com/work" target="_blank" title="portfolio"><img src="pic/Joy Kaplan 1.png"></a></div><div class="B"><h2>JOY KAPLAN</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://lkesterk.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/Leticia Kesterke Clausen 2.png"></a></div><div class="B"><h2>LETICIA K CLAUSEN</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://skportfolio.art" target="_blank" title="portfolio"><img src="pic/SarahKolesar.png"></a></div><div class="B"><h2>SARAH KOLESAR</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="#" target="_blank" title="portfolio"><img src="pic/MaddieMarquess.png"></a></div><div class="B"><h2>MADDIE MARQUESS</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://hannahmcconihe.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/HannahMcConihe.png"></a></div><div class="B"><h2>HANNAH MCCONIHE</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://alexmillerdesign.com/" target="_blank" title="portfolio"><img src="pic/AlexMiller.png"></a></div><div class="B"><h2>ALEX MILLER</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="https://www.abigailmyersdesign.com/" target="_blank" title="portfolio"><img src="pic/AbigailMyers.png"></a></div><div class="B"><h2>ABIGAIL MYERS</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://katiamzehem.com" target="_blank" title="portfolio"><img src="pic/KatiaMzehem.png"></a></div><div class="B"><h2>KATIA MZEHEM</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://jacobnicholson.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/JacobNicholson.png"></a></div><div class="B"><h2>JACOB NICHOLSON</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="https://audreypiersondesign.com/" target="_blank" title="portfolio"><img src="pic/Audrey Pierson 1.png"></a></div><div class="B"><h2>AUDREY PIERSON</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://madelynpowell.myportfolio.com/graphic-design" target="_blank" title="portfolio"><img src="pic/Madelyn Powell 1.png"></a></div><div class="B"><h2>MADELYN POWELL</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="www.brookerepasky.com" target="_blank" title="portfolio"><img src="pic/Brooke Repasky 1.png"></a></div><div class="B"><h2>BROOKE REPASKY</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://eryan13.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/Ivy Ryan 1.png"></a></div><div class="B"><h2>IVY RYAN</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="https://hsalcius.myportfolio.com/ " target="_blank" title="portfolio"><img src="pic/Hanna Salcius 1.png"></a></div><div class="B"><h2>HANNA SALCIUS</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://brentsanderson.myportfolio.com" target="_blank" title="portfolio"><img src="pic/BrentSanderson.png"></a></div><div class="B"><h2>BRENT SANDERSON</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="https://lucilleschneider.myportfolio.com" target="_blank" title="portfolio"><img src="pic/Lucille Schneider 1.png"></a></div><div class="B"><h2>LUCILLE SCHNEIDER</h2></div></div>
+            <div class="grid-cell-1"id="pcolor"><div class="A"><a href="https://msmit407.myportfolio.com/" target="_blank" title="portfolio"><img src="pic/Maddy Smith 1.png"></a></div><div class="B"><h2>MADDY SMITH</h2></div></div>
+            <div class="grid-cell-1"id="bcolor"><div class="A"><a href="https://sydnut.com/" target="_blank" title="portfolio"><img src="pic/Sydnee Tirri 1.png"></a></div><div class="B"><h2>SYDNEE TIRRI</h2></div></div>
+            <div class="grid-cell-1"id="gcolor"><div class="A"><a href="#" target="_blank" title="portfolio"><img src="pic/JillianWilson.png"></a></div><div class="B"><h2>JILLIAN WILSON</h2></div></div>
+        </div><!--Container-->
+    </main>
+    <footer>
+        <p>Powered by KSU BFA brains</p>
+    </footer>
+
+    <!-- Added JavaScript for dropdown functionality -->
+    <script>
+        // JavaScript to toggle the dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownBar = document.getElementById('seniors-dropdown');
+            const container = document.querySelector('.containerS');
+            
+            dropdownBar.addEventListener('click', function() {
+                container.classList.toggle('show');
+                dropdownBar.classList.toggle('active');
+                
+                // Change text based on state
+                if (dropdownBar.classList.contains('active')) {
+                    dropdownBar.innerText = 'SENIORS SHOWCASE - CLICK TO HIDE';
+                } else {
+                    dropdownBar.innerText = 'SENIORS SHOWCASE - CLICK TO VIEW';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
