@@ -2,7 +2,7 @@
 
 The website I designed and built for Kent State University's 2025 **Visual Communication Design BFA Senior Showcase**. It brings all 30 graduating seniors' design work together in one place.
 
-**Live site:** [vcdbfashow.com](https://vcdbfashow.com)
+**Live site:** https://jacob-nicholson.github.io/vcd-bfa-showcase/
 
 ## About the project
 
